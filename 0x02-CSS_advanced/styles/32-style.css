@@ -134,6 +134,10 @@ a:active {
     transition-property: color, background-color;
 }
 
+.navbar-menu {
+    float: right;
+}
+
 .nav {
     margin: 0;
     padding: 0;

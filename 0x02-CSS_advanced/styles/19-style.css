@@ -78,6 +78,10 @@ a:active {
     background-color: var(--color-light-grey);
 }
 
+.navbar-menu {
+    float: right;
+}
+
 .nav {
     margin: 0;
     padding: 0;
