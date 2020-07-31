@@ -1,0 +1,8 @@
+/* sass 11-loop_photos.scss | tail -n +3 */
+@import '11-photos.scss';
+
+@each $item_name in $list-names {
+    .photo-#{$item_name} {
+        background: image-url("photos/#{item_name}.jpg") no-repeat;
+    }
+}

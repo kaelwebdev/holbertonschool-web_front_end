@@ -1,0 +1,13 @@
+/* sass 8-mixin_margins.scss | tail -n +2 */
+@mixin m_l_r($m_px) {
+    margin-left: $m_px;
+    margin-right: $m_px;
+}
+
+body {
+    @include m_l_r(10px);
+}
+
+div {
+    @include m_l_r(15px);
+}

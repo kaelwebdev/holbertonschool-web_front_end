@@ -1,0 +1,10 @@
+/* sass 7-nested_deeper.scss | tail -n +2 */
+body {
+    font-size: 14px;
+    h1 {
+        font-size: 16px;
+        &.smaller { 
+            font-size: 12px;
+        }
+    }
+}

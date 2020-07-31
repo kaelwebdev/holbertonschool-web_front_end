@@ -1,0 +1,14 @@
+/* sass 10-import_colors.scss | tail -n +3 */
+@import '10-colors.scss';
+
+.red {
+    color: $red;
+}
+
+.green {
+    color: $green;
+}
+
+.blue {
+    color: $blue;
+}

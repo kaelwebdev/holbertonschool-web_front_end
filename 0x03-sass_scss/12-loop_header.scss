@@ -1,0 +1,6 @@
+/* sass 12-loop_header.scss | tail -n +2 */
+@for $lvl from 1 through 5 {
+    h#{$lvl} {
+        font-size: 0px + $lvl;
+    }
+}

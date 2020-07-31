@@ -1,0 +1,12 @@
+/* sass 1-color_variable.scss | tail -n +2 */
+$c: #3D3D3D;
+$bgc: #6D6D6D;
+
+body {
+    color: $c;
+    background-color: $bgc;
+}
+
+p {
+    color: $c;
+}

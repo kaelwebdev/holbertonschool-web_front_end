@@ -1,0 +1,18 @@
+/* sass 102-media_query.scss | tail -n +2 */
+@mixin mq_v1($fs, $mw){
+    @media screen and (max-width: $mw) {
+        font-size: $fs;
+    }
+}
+
+h1 {
+    font-size: 20px;
+    @include mq_v1(18px, 960px);
+    @include mq_v1(16px, 640px);
+    @media screen and (max-width: 320px) {
+        font-size: 14px;
+        &.small {
+            color: #1D1D1D;
+        }
+    }
+}
