@@ -1,8 +1,4 @@
 /* sass 100-loop_col.scss | tail -n +2 */
-@mixin w($w){
-    width: $w;
-}
-
 @for $n from 1 through 4 {
     .col-#{$n} {
         @if $n == 1 {
@@ -10,9 +6,9 @@
         } @else if $n == 2 {
             width: 50%;
         } @else if $n == 3 {
-            @include w(33.3333333333%);
+            width: 33.3333333333%;
         } @else {
-            @include w(25%);
+            width: 25%;
         }
     }
 }
