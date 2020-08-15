@@ -177,6 +177,11 @@ a:active {
 	white-space: nowrap;
 }
 
+main img {
+	width: 100%;
+	height: auto;
+}
+
 /*** 2. LAYOUT ***/
 
 /* Layout
@@ -211,6 +216,25 @@ ul.row {
 
 .col-1-2 {
 	width: calc((100% / 2) - 2rem);
+}
+
+@media only screen and (max-width: 767px) {
+	:root {
+		--section-padding: 5rem 1.5rem;
+		--section-body-padding: 2rem 0 0;
+	}
+	ul.row, .row {
+		flex-direction: column;
+		margin: 0;
+	}
+
+	[class^="col-"] {
+		margin: 0 0 3rem 0;
+	}
+	
+	.col-1-3, .col-1-2 {
+		width: 100%;
+	}
 }
 
 /* Navbar
@@ -262,8 +286,10 @@ ul.row {
 	width: 100%;
 }
 
-.navbar-menu{
-	display: none;
+@media only screen and (max-width: 767px) {
+	.navbar-menu {
+		display: none;
+	}
 }
 
 /* Header
@@ -404,25 +430,9 @@ ul.row {
 	flex-direction: row-reverse;
 }
 
-.section-latest-news [class*='col-'] {
-	align-self: center;
-}
-
-@media (min-width: 768px) {
-	/* si es >= 768px*/
-	.section-latest-news img{
-		width: 305px;
-		height: 305px;
-	}
-}
-
-@media (max-width: 767px) {
-	.section-latest-news img{
-		width: 100%;
-	}
-
-	.section-latest-news .row {	
-		flex-direction: column-reverse;
+@media only screen and (max-width: 767px) {
+	.section-latest-news .row {
+		flex-direction: column;
 	}
 }
 
@@ -439,26 +449,6 @@ ul.row {
 .section-about-us [class*='col-'] {
 	align-self: center;
 }
-
-@media (min-width: 768px) {
-	/* si es >= 1200px*/
-	.section-about-us img{
-		width: 300px;
-		height: 460px;
-	}
-}
-
-@media (max-width: 767px) {
-	/* si es >= 1200px*/
-	.section-about-us img{
-		width: 100%;
-	}
-
-	.section-about-us .row {	
-		flex-direction: column;
-	}
-}
-
 
 /*** 4. CARD ***/
 
