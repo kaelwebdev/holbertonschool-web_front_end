@@ -262,6 +262,10 @@ ul.row {
 	width: 100%;
 }
 
+.navbar-menu{
+	display: none;
+}
+
 /* Header
 	============================= */
 
