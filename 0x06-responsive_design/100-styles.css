@@ -799,6 +799,7 @@ ul.row {
 .post {
 	display: flex;
 	align-items: baseline;
+	margin: 0 2rem;
 }
 
 .post-content {
@@ -826,6 +827,17 @@ ul.row {
 	font-size: var(--font-size-small);
 	color: var(--color-grey);
 	text-align: center;
+}
+
+@media only screen and (max-width: 767px){
+	.post {
+		flex-direction: column;
+		margin: 2rem;
+	}
+	
+	.post-content {
+		padding-left: 0;
+	}
 }
 
 /* Post Meta
@@ -888,6 +900,14 @@ ul.row {
 
 .post-comments .section-title {
 	font-variant: small-caps;
+}
+
+@media only screen and (max-width: 767px) {
+	.post-comments {
+		width: calc(100% - 4rem);
+		margin: 2rem;
+		padding: 0;
+	}
 }
 
 /* Basic form
