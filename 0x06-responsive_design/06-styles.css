@@ -371,6 +371,10 @@ ul.row {
 	top: 0;
 }
 
+.header .menu-icon {
+	display: none;
+}
+
 @media only screen and (max-width: 767px) {
 	:root {
 		--header-padding: 2rem 0 0;
