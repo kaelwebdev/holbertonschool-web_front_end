@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>task-1</title>
+</head>
+
+<body>
+	<h1>Login to the website</h1>
+	<input id="firstname" placeholder="Firstname">
+	<input id="email" placeholder="Email">
+	<button id="btn1" onclick="setCookies()">Log me in</button>
+	<h1>Cookies</h1>
+	<button id="btn2" onclick="showCookies()">Show the cookies</button>
+	<script  type="application/javascript">
+		window.onload = start_code;
+
+		function start_code () {
+			
+		}
+
+		function setCookies (){
+			let d = new Date();
+			d.setTime(d.getTime() + (10*24*60*60*1000)); // 10 days
+			var expires = "expires="+ d.toUTCString();
+			document.cookie = `firstname=${document.getElementById("firstname").value}; ${expires}`;
+			document.cookie = `email=${document.getElementById("email").value}; ${expires}`;
+		}
+
+		function showCookies () {
+			let cks = document.cookie.split(";");
+			// let k = [];
+			let v = [];
+			
+			// Ej: ["firstname=pepito", " email=pepito@hotmail.com"]
+			for (let i in cks) {
+			//	k.push(cks[i].split("=")[0]);
+				v.push(cks[i].split("=")[1]);
+			}
+			let p = document.createElement("p");
+			p.innerText = `Cookies: ${v[0]}, ${v[1]}`;
+			document.body.appendChild(p);
+
+		}
+	</script>
+</body>
+
+</html>

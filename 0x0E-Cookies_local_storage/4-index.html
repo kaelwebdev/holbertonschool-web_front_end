@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>task-4</title>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+</head>
+
+<body>
+	<div id="form">
+		<h2>Login to the website</h2>
+		<input id="firstname" placeholder="Firstname">
+		<input id="email" placeholder="Email">
+		<button id="btn1" onclick="setCookies()">Log me in</button>
+	</div>
+
+	<script type="application/javascript">
+		window.onload = start_code;
+
+		function start_code() {
+
+		}
+
+		function setCookies() {
+			Cookies.set("firstname", document.getElementById("firstname").value, { expires: 10 })
+			Cookies.set("email", document.getElementById("email").value, { expires: 10 })
+			showWelcomeMessageOrForm();
+		}
+
+		function showCookies() {
+			let email = Cookies.get("email");
+			let firstname = Cookies.get("firstname");
+			let p = document.createElement("p");
+			p.innerText = `Email: ${email} - Firstname: ${firstname}`;
+			document.body.appendChild(p);
+		}
+
+		function hideForm() {
+			document.getElementById("form").style.display = "none";
+		}
+
+		function showForm() {
+			document.getElementById("form").style.display = "block";
+		}
+
+		function deleteCookiesAndShowForm() {
+			let h1 = document.getElementById("welcome_msg");
+			h1.remove();
+			Cookies.remove("firstname");
+			Cookies.remove("email");
+			showForm();
+		}
+
+		function showWelcomeMessageOrForm() {
+			let firstname =  Cookies.get("firstname");
+			let email = Cookies.get("email");
+			if (firstname && email) {
+				hideForm();
+
+				let h1 = document.createElement("h1");
+				h1.innerText = `Welcome ${firstname}`;
+				h1.setAttribute("id", "welcome_msg");
+
+				let btn_logout = document.createElement("a");
+				btn_logout.innerText = "(logout)";
+				btn_logout.setAttribute("onclick", "deleteCookiesAndShowForm()");
+				btn_logout.style.cursor = "pointer";
+				btn_logout.style.fontWeight = "normal";
+				btn_logout.style.fontStyle = "italic";
+				btn_logout.style.marginLeft = "10px";
+				h1.appendChild(btn_logout);
+				document.body.appendChild(h1);
+			} else {
+				showForm();
+			}
+		}
+		showWelcomeMessageOrForm();
+	</script>
+</body>
+
+</html>
