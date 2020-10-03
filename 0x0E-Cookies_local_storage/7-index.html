@@ -43,11 +43,13 @@
 				div.removeChild(div.firstChild);
 			}
 			sessionStorage.clear();
+			updateCart();
 		};
 
 		function createStore() {
 			let h2 = document.createElement("h2");
 			h2.innerText = "Available products:";
+			document.body.appendChild(h2);
 			let ul = document.createElement("ul");
 			for (let i in availableItems) {
 				let item = document.createElement("li");
